@@ -1,4 +1,4 @@
-define component_rsyslog::config (
+define rsyslog::config (
   $ensure,
   $priority   = '10',
   $type       = 'facility', #can also be prefix
