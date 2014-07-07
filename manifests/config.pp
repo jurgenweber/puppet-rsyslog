@@ -1,7 +1,7 @@
 define rsyslog::config (
   $ensure,
   $priority   = '10',
-  $type       = 'facility', #can also be prefix
+  $type       = 'facility', #can also be prefix or programname
   $selector,
   $action,
   $discard    = true, #stop logging processing here

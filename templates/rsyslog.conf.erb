@@ -1,9 +1,8 @@
 #maintained by puppet
 
-<% if @type == 'facility' %>
+<% if @type == 'facility' -%>
 <%= @selector %>                               <%= @action %>
-<% end %>
-<% if @type == 'prefix' %>
-:msg,contains,"<%= @selector %>"               <%= @action %>
+<% else -%>
+:<%= @type %>,contains,"<%= @selector %>"      <%= @action %>
 <% end %>
 <% if @discard %>&~<% end %>
