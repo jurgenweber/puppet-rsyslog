@@ -3,6 +3,7 @@
 <% if @type == 'facility' -%>
 <%= @selector %>                               <%= @action %>
 <% else -%>
-:<%= @type %>,contains,"<%= @selector %>"      <%= @action %>
+!<%= @name %>
+<%= @selector %>      <%= @action %>
 <% end %>
 <% if @discard %>&~<% end %>

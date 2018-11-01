@@ -14,11 +14,14 @@ define rsyslog::config (
   include rsyslog::params
   include rsyslog::service
 
-  file { "${priority}_${selector}":
-    ensure  => $ensure,
-    path    => "${rsyslog::config_dir}/${priority}-${selector}.conf",
-    content => template("${module_name}/rsyslog.conf.erb"),
-    notify  => Service[$rsyslog::service_name],
+  file {
+    "${priority}_${name}":
+      ensure  => $ensure,
+      path    => "${rsyslog::config_dir}/${priority}-${name}.conf",
+      content => template("${module_name}/rsyslog.conf.erb"),
+      notify  => Service[$rsyslog::service_name];
+    $action:
+      ensure => file;
   }
 
 }
