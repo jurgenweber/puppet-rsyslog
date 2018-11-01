@@ -15,7 +15,7 @@ define rsyslog::config (
   include rsyslog::service
 
   file {
-    "${priority}_${name}":
+    "${priority}_${name}_${selector}":
       ensure  => $ensure,
       path    => "${rsyslog::config_dir}/${priority}-${name}.conf",
       content => template("${module_name}/rsyslog.conf.erb"),
