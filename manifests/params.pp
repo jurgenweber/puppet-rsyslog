@@ -7,7 +7,7 @@ class rsyslog::params {
       $service_name = 'syslogd'
       $config_dir   = '/etc/syslog.d'
     }
-    /^(Debian|Ubuntu)$/:{
+    /^(Debian|Ubuntu|Raspbian)$/:{
       $service_name = 'rsyslog'
       $config_dir   = '/etc/rsyslog.d'
     }
